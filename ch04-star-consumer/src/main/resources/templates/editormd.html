@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>markdown插件测试</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" type="text/css" href="/editormd/css/editormd.css"/>
+</head>
+
+<body>
+<div id="layout">
+</div>
+
+<div id="md-content" style="z-index: 1 !important;">
+    <textarea></textarea>
+</div>
+
+<!-- 这里必须先引入jquery -->
+<script src="/js/jquery-1.12.4.js"></script>
+<!-- 引入js -->
+<script src="/editormd/editormd.js"></script>
+
+<script type="text/javascript">
+    //初始化Markdown编辑器
+    var contentEditor;
+    $(function() {
+        contentEditor = editormd("md-content", {
+            width: "100%", //宽度
+            height: 500, //高度
+            syncScrolling: "single", //单滚动条
+            path: "/editormd/lib/",//依赖的包路径
+            //上传图片
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "/file/upload"
+
+        });
+    });
+
+</script>
+</body>
+
+</html>

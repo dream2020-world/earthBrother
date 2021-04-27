@@ -1,0 +1,183 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src=""></script>
+    <link rel="stylesheet" href="/css/homePages.css">
+    <link rel="stylesheet" href="/css/logo.css">
+    <script src="/js/jquery-1.12.4.js"></script>
+    <style>
+        .baozang {
+            position: relative;
+            left: 4013px;
+            top: 385px;
+            width: 200px;
+        }
+
+        .up {
+            position: relative;
+            left: 3813px;
+            top: 385px;
+            width: 200px;
+            display: none;
+
+        }
+
+        .dog {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 999999;
+        }
+    </style>
+
+</head>
+<body>
+<div class="dog">
+    <iframe src="/html/dog.html" width="100%" height="100%" scrolling="auto" frameborder="0">
+    </iframe>
+</div>
+
+<!-- 背景 -->
+<!-- 前景 -->
+<div class="bgDiv1 bgDiv">
+    <img src="/images/树洞传送门.gif" class="forest" width="400" alt="森林传送们">
+    <img src="/images/传送门.gif" class="sea" width="400" alt="海洋传送门">
+    <img src="/images/科技传送门.gif" class="Cyberpunk" width="400" alt="赛博朋克传送门">
+    <img src="/images/星系门111.gif" class="galaxy" width="400" alt="星系传送门">
+    <img src="/images/haidibaoxiang-guan.png" class="baozang" alt="宝藏">
+    <img src="/images/touxiang.png" class="up" alt="宝藏">
+    <!-- 提示气泡 -->
+    <div class="PortalPrompt PPForest">
+        <p>点击进入森林...</p>
+        <span></span>
+        <span class="PPC"></span>
+    </div>
+    <div class="PortalPrompt PPSea">
+        <p>点击进入海洋...</p>
+        <span></span>
+        <span class="PPC"></span>
+    </div>
+    <div class="PortalPrompt PPCyberpunk">
+        <p>点击进入未来...</p>
+        <span></span>
+        <span class="PPC"></span>
+    </div>
+    <div class="PortalPrompt PPGalaxy">
+        <p>点击进入星系...</p>
+        <span></span>
+        <span class="PPC"></span>
+    </div>
+</div>
+<!-- 中景 -->
+<div class="bgDiv2 bgDiv"></div>
+<!-- 背景 -->
+<div class="bgDiv3 bgDiv"></div>
+<!-- 页面的元素 -->
+<div class="content">
+    <!-- 头部 -->
+    <div>
+        <!-- logo -->
+        <div class="top-left">
+            <div class="logo">地球浏览器</div>
+            <div class="logoList">
+                <ul>
+                    <li>
+                        <div>
+                            <h3>森林</h3>
+                            <p>树林中，透着寂静，抬头仰望，阳光正透过树叶间的林荫照射下来，像繁星在空中闪烁，有些刺眼，却十分晶莹美丽，透着不可捉摸的静谧。</p>
+                            <a href="/earth/ziran" class="EnterThe">进入
+                                <sapn class="iconfont">&#xe625;</sapn>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>海洋</h3>
+                            <p>海，真的海，同北方高原那片苍茫的土地一样，凝聚着一种无法言说的神秘的生命力，给人一种超越自然的深刻。</p>
+                            <a href="/earth/seal" class="EnterThe">进入
+                                <sapn class="iconfont">&#xe625;</sapn>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>未来</h3>
+                            <p>AI试图在寻觅灵魂，复制人试图在保护灵魂，人类却试图在抛弃灵魂。</p>
+                            <a href="/earth/keji" class="EnterThe">进入
+                                <sapn class="iconfont">&#xe625;</sapn>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>星系</h3>
+                            <p>一望无际的尽头，是否还有人们期待的第二个地球呢？我想，那无限的宇宙空间定然充满了神奇。</p>
+                            <a href="http://127.0.0.1:8020/yuzhou/index.html?__hbt=1618313090143" class="EnterThe">进入
+                                <sapn class="iconfont">&#xe625;</sapn>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 右上角音乐 -->
+        <div class="music">
+            <span class="musicIcon"></span>
+        </div>
+    </div>
+    <!-- 人物 -->
+    <div class="figure"></div>
+    <!-- 底部图标按钮 -->
+    <div class="bottomBtn">
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="vortex"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/homePage.js"></script>
+<script src="/js/logo.js"></script>
+<script>
+    window.onload = function () {
+        $(".dog").fadeOut(500);
+    }
+    $(function () {
+        $(".bgDiv img").eq(0).click(function () {
+            window.location.href = "http://localhost:8000/earth/ziran";
+        })
+        $(".bgDiv img").eq(1).click(function () {
+            window.location.href = "http://localhost:8000/earth/seal";
+        })
+        $(".bgDiv img").eq(2).click(function () {
+            window.location.href = "http://localhost:8000/earth/keji";
+        })
+        $(".bgDiv img").eq(3).click(function () {
+            window.location.href = "http://127.0.0.1:8020/yuzhou/index.html?__hbt=1618313090143";
+        })
+        $(".logo").click(function () {
+            window.location.href = "http://localhost:8000/earth/user/index";
+        })
+        $(".baozang").click(function () {
+            if ($(".baozang").attr("src") === "/images/haidibaoxiang-guan.png") {
+                $(".baozang").attr("src", "/images/haidibaoxiang-kai.png")
+                $(".up").fadeIn(1000);
+                $(".up").animate({top: '250px', speed: '1000'});
+
+            } else {
+                $(".baozang").attr("src", "/images/haidibaoxiang-guan.png")
+                $(".up").animate({top: '400px', speed: '1000'});
+                $(".up").fadeOut(1000);
+            }
+        })
+    })
+
+</script>
+</html>
+

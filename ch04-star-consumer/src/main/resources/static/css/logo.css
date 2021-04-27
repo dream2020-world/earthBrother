@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('/font/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('/font/iconfont.woff2') format('woff2'),
+        url('/font/iconfont.woff') format('woff'),
+        url('/font/iconfont.ttf') format('truetype'),
+        url('/font/iconfont.svg#iconfont') format('svg');
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+/* 左上角logo */
+.top-left{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    z-index: 9999;
+    height: auto;
+    cursor: pointer;
+}
+.logo{
+    width: 370px;
+    height: 99px;
+    background: url(/images/地球logo.png);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    text-indent: -333em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/* logo下拉 */
+.logoList{
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(215, 247, 229,0.8);
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+.logoList ul{
+    width: 100%;
+    height: 100%;
+}
+.logoList ul li{
+    width: 100%;
+    padding-left:100% ;
+    height: 25%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border:solid 1px #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    background-size:cover;
+}
+.logoList ul li:nth-of-type(1){
+    background-image: url(/images/logoList1.jpg);
+}
+.logoList ul li:nth-of-type(2){
+    background-image: url(/images/logoList2.jpg);
+}
+.logoList ul li:nth-of-type(3){
+    background-image: url(/images/logoList3.jpg);
+}
+.logoList ul li:nth-of-type(4){
+    background-image: url(/images/logoList4.jpg);
+}
+.logoList ul li div{
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    position: absolute;
+    left: 0;
+    background-color:rgba(0, 0, 0,0.6);
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.2;
+    font-size: 0px;
+    color: #c8c8c8;
+}
+.logoList ul li div > a{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #c8c8c8;
+}
+.logoList ul li div h3{
+    margin: 5px 0;
+}
+.logoList ul li:hover > div{
+opacity: 1;
+}
+.logoList ul li:hover > div > h3{
+    opacity: 1;
+    font-size: 16px;
+}
+.logoList ul li:hover > div > p{
+    opacity: 1;
+    font-size: 14px;
+}
+.logoList ul li:hover > div > a{
+    font-size: 14px;
+}
+.logoList ul li:hover > div > a:hover{
+    color: rgb(0, 255, 191);
+}
+.logoList ul li:hover > div > a .iconfont{
+    vertical-align: -1px;
+    
+}

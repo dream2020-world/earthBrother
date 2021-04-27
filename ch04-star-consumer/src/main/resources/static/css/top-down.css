@@ -1,0 +1,51 @@
+/* 头部下拉 */
+.top-list{
+    width: 100%;
+    height: 620px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top:-620px;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+}
+.top-list #logoList{
+    width: 1350px;
+    background-color: transparent;
+    display: block;
+    top: 15%;
+}
+.top-list #logoList ul li{
+    width: 325px;
+    height: 420px;
+    padding-left: 0;
+    float: left;
+    margin-right: 16px;
+}
+.top-list #logoList ul li:last-of-type{
+    margin-right: 0px;
+}
+.top-list > span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: rgb(240, 232, 232);
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    text-align: center;
+    border-radius:0 0 5px 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s linear;
+}
+.top-list:hover{
+    top:0;
+}
+.top-list:hover > .TL-btn{
+    width: 0;
+    font-size: 0;
+}

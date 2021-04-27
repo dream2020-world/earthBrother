@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+* {padding:0; margin:0; box-sizing: border-box}
+html {width:100%; height:100%;}
+body {width:100%; height:100%; overflow: hidden; background:radial-gradient(circle at 70% 5%, #fff 2%, #eee 2.2%, #ddd 3%, #fff 50%)}
+img {border:none}
+input,textarea,button,select {outline:none}
+a {text-decoration:none;-webkit-tap-highlight-color:transparent}
+ol,ul,li {list-style:none;}
+.clearfix:after {content:" "; display:block; height:0; clear:both;}
+.clearfix {*zoom: 1;}
+
+.ctrl_ {position:fixed; top:0; left:0; padding:5px; z-index: 1}
+.ctrl_ li {border:solid 1px #ddd; margin:2px; cursor: pointer; padding:0px 3px}
+
+.RunningdogWrap {width:100%; margin:0px auto 0;}
+
+.bone {fill:none; opacity: 0; stroke-linecap:round;}
+.bone_main {stroke:#000; stroke-width:3;}
+.bone_ear {stroke:#444; stroke-width:2; }
+.bone_tongue {stroke:#f56363; stroke-width:2;}
+.bone_lf {stroke:#888}
+
+.seg {opacity:1; stroke:#333; stroke-width:0}
+.seg_main {fill:#404040}
+.seg_white {fill:#fff}
+.seg_black {fill:#222}
+.seg_tongue {fill:#f56363}
+.seg_lf {fill:#282828}
+.HlegL_1 {fill:url(#HlegL_1_skin)}
+.HlegL_2 {fill:url(#HlegL_2_skin)}
+.HlegR_2 {fill:url(#HlegR_2_skin)}
+.HlegR_3 {fill:url(#HlegR_3_skin)}
+.FlegL_1 {fill:url(#FlegL_1_skin)}
+.FlegL_2 {fill:url(#FlegL_2_skin)}
+.FlegR_2 {fill:url(#FlegR_2_skin)}
+.FlegR_3 {fill:url(#FlegR_3_skin)}
+.Body_1 {fill:url(#Body_1_skin)}
+.Body_2 {fill:url(#Body_2_skin)}
+.Jaw {fill:url(#Jaw_skin)}
+.DogHead {fill:url(#DogHead_skin)}
+.EarR_1 {fill:url(#EarR_1_skin)}
+.Tail_1 {fill:url(#Tail_1_skin)}
+.Dog_shadow {filter:url(#Dog_shadow); fill:#666; fill-opacity:0.3}
+
+.runningdog {width:100%; margin-top:10px; transform:scale(1)}
+
+.ground {fill:none; stroke:#333; stroke-width:4px; stroke-miterlimit:5; stroke-linecap:round; stroke-dasharray:10px 20px; stroke-dashoffset:0px }
+.ground2 {stroke:#ccc; stroke-width:3px; stroke-dasharray:10px 20px; stroke-dashoffset:0px}
+
+@media (min-width:600px) {
+	.RunningdogWrap {width:80%}
+	.runningdog {margin-top:0px}
+}
+@media (min-width:1200px) {
+	.RunningdogWrap {width:34%}
+	.runningdog {margin-top:0px}
+}

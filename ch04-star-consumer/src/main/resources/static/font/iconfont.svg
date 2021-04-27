@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="shuangjiantouxia" unicode="&#58928;" d="M512 154.496l338.752 338.752 90.496-90.496L512-26.496 82.752 402.752l90.496 90.496L512 154.496z m0 320l338.752 338.752 90.496-90.496L512 293.504 82.752 722.752l90.496 90.496L512 474.496z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="jinru" unicode="&#58917;" d="M605.44 343.68l-172.8-172.8 55.04-55.04 268.8 268.16-268.8 268.8-55.04-55.04 173.44-173.44H3.84v-79.36h569.6l32-1.28z m0 0M908.8 896H115.2C53.76 896 3.84 846.08 3.84 784.64v-175.36h76.8V784.64c0 19.2 15.36 34.56 34.56 34.56h793.6c19.2 0 34.56-15.36 34.56-34.56v-801.28c0-19.2-15.36-34.56-34.56-34.56H115.2c-19.2 0-34.56 15.36-34.56 34.56v175.36H3.84v-175.36C3.84-78.08 53.76-128 115.2-128h793.6c61.44 0 111.36 49.92 111.36 111.36V784.64C1020.16 846.08 970.24 896 908.8 896z m0 0"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

@@ -1,0 +1,6 @@
+com\dream\star\model\User.class
+com\dream\star\model\Hobby.class
+com\dream\star\model\UserInfo.class
+com\dream\star\service\HobbyService.class
+com\dream\star\service\UserInfoService.class
+com\dream\star\service\UserService.class

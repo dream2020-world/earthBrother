@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on" data-theme-color="#c0e3e7"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>用户信息</title>
+    <meta name="description" content="">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--bootstrap-->
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="/font/user/icomoon/style.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="/js/userinfo/plugins/highlight/solarized-light.css" rel="stylesheet">
+    <link href="/css/user/style.css" rel="stylesheet">
+    <link href="/css/user/aboutme.css" rel="stylesheet"/>
+    <link href="/css/titleImg/titleImg.css" rel="stylesheet"/>
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="/js/userinfo/vendor/modernizr-3.3.1.min.js"></script>
+    <style>
+        .titleImg div {
+            color: black;
+        }
+        .dog {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 999999;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="dog">
+    <iframe src="/html/dog.html" width="100%" height="100%" scrolling="auto" frameborder="0">
+    </iframe>
+</div>
+<div class="ace-wrapper">
+    <header id="ace-header" class="ace-container-shift ace-logo-in ace-head-boxed ace-nav-right">
+        <div class="ace-head-inner">
+            <div class="ace-head-container ace-container">
+                <div class="ace-head-row">
+                    <div id="ace-head-col1" class="ace-head-col text-left">
+                        <a id="ace-logo" class="ace-logo" >
+                            <img src="/images/地球logo.png" alt="ace resume"><span></span>
+                        </a>
+                    </div>
+
+                    <div id="ace-head-col2" class="ace-head-col text-right">
+                        <div class="ace-nav-container ace-container hidden-sm hidden-xs">
+                            <nav id="ace-main-nav">
+                                <ul class="clear-list" style="display: none">
+                                    <li><a href="index.html">about</a></li>
+                                    <li><a href="portfolio.html">portfolio</a>
+                                    <li><a href="testimonials.html">references</a></li>
+                                    <li><a href="search.html">search</a></li>
+                                    <li><a href="category.html">category</a></li>
+                                    <li><a href="contact.html">contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div id="ace-head-col3" class="ace-head-col text-right">
+                        <button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">
+                            <span class="ace-icon ace-icon-side-bar-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div><!-- .ace-container -->
+        </div><!-- .ace-head-inner -->
+    </header><!-- #ace-header -->
+
+
+    <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
+        <ul class="clear-list">
+            <li>
+                <a href="index.html" data-tooltip="Home"><img class="avatar avatar-42"
+                                                              src="/images/17.png" alt="">111111</a>
+            </li>
+            <li>
+                <a href="experience.html" data-tooltip="Experience"><span
+                        class="ace-icon ace-icon-experience"></span></a>
+            </li>
+            <li>
+                <a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
+            </li>
+            <li>
+                <a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
+            </li>
+            <li>
+                <a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
+            </li>
+            <li>
+                <a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
+            </li>
+        </ul>
+    </nav><!-- #ace-tab-nav-sm -->
+    <!--头像模态窗-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">头像上传</h4>
+                    <main class="main flex-row-wrap">
+                        <section class="main__camera">
+                            <h2 class="main__title">从本地摄像头获取</h2>
+                            <p class="main__hint">请确保当前设备的摄像头处于可用状态</p>
+
+                            <div id="open-power" class="main__camera-power flex-center">
+                            <span class="main__camera-power--span">
+					        	<img src="/images/titleImg/camera.png" alt="power"/>
+				        	</span>
+                                <p class="main__camera-power--hint">请开启摄像头调用权限</p>
+                            </div>
+                            <form  id="fr" enctype="multipart/form-data" method="post">
+                                <input type="file"  id="upload" style="display: none" />
+                            </form>
+                            <div class="imgs">
+                                本地上传
+                            </div>
+
+                            <button id="main__confirm" class="main__camera-confirm flex-center">
+                                <img class="main__camera-confirm--img" src="/images/titleImg/photo.png"
+                                     alt="photograph">
+                            </button>
+                        </section>
+
+                        <section class="main__upload">
+                            <h2 class="main__title">头像裁剪</h2>
+                            <p class="main__hint">将头像调整为你喜欢的样子就可以上传啦</p>
+
+                            <div class="flex-row-wrap">
+                                <div id="main__photo" class="main__upload-left">
+                                    <div class="main__upload-left--thumbBox"></div>
+                                    <div class="main__upload-left--spinner">Loading...</div>
+                                </div>
+
+                                <div class="main__upload-right">
+                                </div>
+                            </div>
+
+                            <div class="main__upload-left--btn flex-row-wrap">
+                                <button id="main__lessen" class="main__upload-btn flex-center">
+                                    <!-- 缩小 -->
+                                    <img class="main__upload-btn--img" src="/images/titleImg/small.png" alt="small">
+                                </button>
+
+                                <button id="main__boost" class="main__upload-btn flex-center">
+                                    <!-- 放大 -->
+                                    <img class="main__upload-btn--img" src="/images/titleImg/big.png" alt="big">
+                                </button>
+
+                                <button id="main__rop" class="main__upload-btn main__upload-btn--color flex-center">裁剪
+                                </button>
+                                <button id="main__submit"
+                                        class="main__upload-btn main__upload-btn--confirm flex-center">完成上传
+                                </button>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 用户信息模态框（Modal） -->
+    <div class="modal fade" id="userInfoModel" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 90%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">修改个人信息</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="edit-username" class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-username"
+                                       th:value="${session.user.name}">
+                            </div>
+                            <label for="edit-borndate" class="col-sm-2 control-label">出生日期</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control time" id="edit-borndate">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-phone" class="col-sm-2 control-label">手机</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-phone"
+                                       th:value="${session.user.phone}">
+                            </div>
+                            <label for="edit-email" class="col-sm-2 control-label">邮箱</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-email"
+                                       th:value="${session.user.email}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-address" class="col-sm-2 control-label">住址</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-address">
+                            </div>
+
+                            <label for="edit-job" class="col-sm-2 control-label">职业</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-job">
+                            </div>
+                        </div>
+
+
+                        <div style="height: 1px; width: 103%; background-color: #D5D5D5; left: -13px; position: relative;"></div>
+
+                        <div style="position: relative;top: 15px; padding-bottom: 15px">
+                            <div class="form-group">
+                                <label for="edit-intro" class="col-sm-2 control-label">个人信息</label>
+                                <div class="col-sm-10" style="width: 81%;">
+                                    <textarea class="form-control" rows="3"
+                                              id="edit-intro"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 1px; width: 103%; background-color: #D5D5D5; left: -13px; position: relative;"></div>
+
+                        <div style="position: relative;top: 15px; padding-bottom: 15px">
+                            <div class="form-group">
+                                <p class="col-sm-2 control-label">兴趣爱好</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-hobbies0" class="col-sm-2 control-label">爱好1</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-hobbies0">
+                            </div>
+
+                            <label for="edit-count0" class="col-sm-2 control-label">打分</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-count0" placeholder="输入1~10">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-hobbies1" class="col-sm-2 control-label">爱好2</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-hobbies1">
+                            </div>
+
+                            <label for="edit-count1" class="col-sm-2 control-label">打分</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-count1" placeholder="输入1~10">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-hobbies2" class="col-sm-2 control-label">爱好3</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-hobbies2">
+                            </div>
+
+                            <label for="edit-count2" class="col-sm-2 control-label">打分</label>
+                            <div class="col-sm-10" style="width: 300px;">
+                                <input type="text" class="form-control" id="edit-count2" placeholder="输入1~10">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button id="submit_btn" type="button" class="btn btn-primary" data-dismiss="modal">更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article id="ace-card" class="ace-card bg-primary">
+        <div class="ace-card-inner text-center">
+            <div class="titleImg">
+
+                <img class="avatar avatar-195" src="/images/17.png" width="195"
+                     height="195"
+                     alt="">
+                <div>上传头像</div>
+            </div>
+            <h1 th:text="${session.user.getName()==null?session.user.getId().substring(0,10):session.user.getName()}"></h1>
+            <p class="text-muted">花艺 | 程序员</p>
+        </div>
+
+        <footer class="ace-card-footer">
+            <a class="btn btn-lg btn-block btn-thin btn-upper" href="javascript:void(0)">修改个人信息</a>
+        </footer>
+    </article><!-- #ace-card -->
+
+    <div id="ace-content" class="ace-container-shift">
+        <div class="ace-container">
+
+
+            <div id="ace-nav-wrap" class="hidden-sm hidden-xs">
+                <div class="ace-nav-cont">
+                    <div id="ace-nav-scroll">
+                        <nav id="ace-nav" class="ace-nav">
+                            <ul class="clear-list">
+                                <li>
+                                    <a href="index.html" data-tooltip="Home">
+                                        <img class="avatar avatar-42"
+                                             src=""
+                                             alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="experience.html" data-tooltip="工具箱"><span
+                                            class="ace-icon ace-icon-experience"></span></a>
+                                </li>
+                                <li>
+                                    <a href="portfolio.html" data-tooltip="图片集"><span
+                                            class="ace-icon ace-icon-portfolio"></span></a>
+                                </li>
+                                <li>
+                                    <a href="testimonials.html" data-tooltip="作品"><span
+                                            class="ace-icon ace-icon-references"></span></a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" data-tooltip="邮件"><span
+                                            class="ace-icon ace-icon-contact"></span></a>
+                                </li>
+                                <li>
+                                    <a href="category.html" data-tooltip="博客"><span
+                                            class="ace-icon ace-icon-blog"></span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div id="ace-nav-tools" class="hidden">
+                        <span class="ace-icon ace-icon-dots-three-horizontal"></span>
+
+                        <button id="ace-nav-arrow" class="clear-btn">
+                            <span class="ace-icon ace-icon-chevron-thin-down"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="ace-nav-btm"></div>
+            </div><!-- .ace-nav-wrap -->
+
+            <div class="ace-paper-stock">
+                <main class="ace-paper clearfix">
+                    <div class="ace-paper-cont clear-mrg">
+
+                        <!-- START: PAGE CONTENT -->
+                        <div class="padd-box clear-mrg">
+                            <section class="section brd-btm">
+                                <div class="row">
+                                    <div class="col-sm-12 clear-mrg text-box">
+                                        <h2 class="title-lg text-upper">关于我</h2>
+                                        <p class="text_intro"></p>
+                                        <p class="text-right">
+                                        </p>
+                                    </div>
+                                </div>
+                            </section><!-- .section -->
+
+                            <section class="section brd-btm">
+                                <input id="userId" type="hidden" th:value="${session.user.id}">
+                                <input id="userInfoId" type="hidden"/>
+                                <div class="row">
+                                    <div class="col-sm-6 clear-mrg">
+                                        <h2 class="title-thin text-muted">个人信息</h2>
+
+                                        <dl class="dl-horizontal clear-mrg">
+                                            <dt class="text-upper">名字</dt>
+                                            <dd th:text="${session.user.name==null?'你的名字':session.user.name}"></dd>
+
+                                            <dt class="text-upper">出生日期</dt>
+                                            <dd>日期</dd>
+
+                                            <dt class="text-upper">住址</dt>
+                                            <dd>中国
+                                            </dd>
+
+                                            <dt class="text-upper">邮箱</dt>
+                                            <dd th:text="${session.user.email}"><a
+                                                    href="mailto:robertsmith@company.com"></a>
+                                            </dd>
+
+                                            <dt class="text-upper">手机</dt>
+                                            <dd th:text="${session.user.phone==null?'你的手机':session.user.phone}"></dd>
+
+                                        </dl>
+                                    </div><!-- .col-sm-6 -->
+
+                                    <div class="col-sm-6 clear-mrg hobbies">
+                                        <h2 class="title-thin text-muted">掌握技能</h2>
+                                    </div><!-- .col-sm-6 -->
+                                </div><!-- .row -->
+                            </section><!-- .section -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="ace-footer" class="ace-container-shift">
+        <div class="ace-container">
+            <div class="ace-footer-cont clear-mrg">
+                <p class="text-center">Copyright &copy; 2017.Company name All rights
+                    reserved.//cdn.bootcss.com/jquery/1.12.2/jquery.min.js</p>
+            </div>
+        </div><!-- .ace-container -->
+    </footer><!-- #ace-footer -->
+
+    <!-- Triangle Shapes -->
+    <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon points="0,455,693,352,173,0,92,0,0,71"
+                 style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5"/>
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0"/>
+    </svg>
+</div><!-- .ace-wrapper -->
+
+
+<!-- Scripts -->
+<script type="text/javascript" src="/js/jquery-1.12.4.js"></script>
+
+
+<!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>-->
+<script type="text/javascript" src="/js/userinfo/plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="/js/userinfo/plugins/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="/js/userinfo/plugins/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="/js/userinfo/plugins/progressbar.min.js"></script>
+<script type="text/javascript" src="/js/userinfo/plugins/slick.min.js"></script>
+<script type="text/javascript" src="/js/userinfo/options.js"></script>
+<script type="text/javascript" src="/js/userinfo/main.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="/css/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/js/userinfo/plugins/index.js"></script>
+<script type="text/javascript" src="/js/titleImg/cropbox.js"></script>
+<script type="text/javascript" src="/js/titleImg/webcam.js"></script>
+
+
+
+<script>
+    window.onload = function () {
+        $(".dog").fadeOut(500);
+    }
+    $(function () {
+        $("#ace-head-col1").click(function () {
+            window.location.href = "http://localhost:8000/earth/index";
+        })
+
+        //上传头像
+        $(".titleImg img").click("click", function () {
+            $("#myModal").modal("show");
+        })
+        //使用日期选择器插件
+        $(".time").datetimepicker({
+            minView: "month",
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left"
+        });
+        var userId = $("#userId").val();
+        /*根据id获取userInfo*/
+        $.ajax({
+            url: "/earth/user/getUserInfo.do",
+            data: {
+                "userId": userId
+            },
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                //进行页面赋值
+                $(".dl-horizontal dd").eq(1).text(data.borndate);
+                $(".text-muted").eq(0).text(data.job);
+                $(".dl-horizontal dd").eq(2).text(data.address);
+                $(".text_intro").text(data.intro);
+                $("#userInfoId").val(data.id);
+                $(".titleImg img").attr("src", data.headimage===null?"/images/17.png":data.headimage)
+                $(".clear-list img").attr("src", data.headimage===null|| data.headimage===""?"/images/17.png":data.headimage)
+                //修改页面赋值
+                $("#edit-borndate").val(data.borndate);
+                $("#edit-address").val(data.address);
+                $("#edit-job").val(data.job);
+                if (data.intro == "" || data.intro == null) {
+                    $("#edit-intro").val("这个人很懒什么都没有留下");
+                } else {
+                    $("#edit-intro").val(data.intro);
+                }
+            }
+        });
+        getHobbies();
+        //更新 根据修改的地方发送不同的ajax
+        $("#submit_btn").click(function () {
+            var id = "[(${session.user.id})]";
+            var name = $("#edit-username").val();
+            var email = $("#edit-email").val();
+            var phone = $("#edit-phone").val();
+            if (name != "[(${session.user.name})]" ||
+                email != "[(${session.user.email})]"
+                || phone != "[(${session.user.phone})]") {
+                //发送ajax
+                $.ajax({
+                    url: "/earth/user/setUser.do",
+                    data: {
+                        "id": id,
+                        "name": name,
+                        "email": email,
+                        "phone": phone
+                    },
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        $(".dl-horizontal dd").eq(0).text(data.name);
+                        $(".dl-horizontal dd").eq(3).text(data.email);
+                        $(".dl-horizontal dd").eq(4).text(data.phone);
+                        $(".ace-card-inner h1").text(data.name)
+
+                    }
+                });
+
+            }
+            //修改userInfo
+            var borndate = $("#edit-borndate").val();
+            var address = $("#edit-address").val();
+            var job = $("#edit-job").val();
+            var intro = $("#edit-intro").val();
+            var userInfoId = $("#userInfoId").val();
+            $.ajax({
+                url: "/earth/user/setUserInfo.do",
+                data: {
+                    "id": userInfoId,
+                    "borndate": borndate,
+                    "address": address,
+                    "job": job,
+                    "intro": intro
+                },
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    //进行页面赋值
+                    $(".dl-horizontal dd").eq(1).text(data.borndate);
+                    $(".text-muted").eq(0).text(data.job);
+                    $(".dl-horizontal dd").eq(2).text(data.address);
+                    $(".text_intro").text(data.intro);
+                }
+            });
+            //修改hobbies
+            //获取 数组
+            for (var i = 0; i < 3; i++) {
+                if ($("#edit-hobbies" + i + "").val() !== null &&
+                    $("#edit-hobbies" + i + "").val() !== "") {
+                    console.log($("#edit-hobbies" + i + "").val())
+                    $.ajax({
+                        url: "/earth/user/setHobbies.do",
+                        data: {
+                            "id": $("#edit-hobbies" + i + "").attr("name"),
+                            "hobby": $("#edit-hobbies" + i + "").val(),
+                            "count": $("#edit-count" + i + "").val() === "" ? 10 : $("#edit-count" + i + "").val(),
+                            "useid": userId,
+                        },
+                        success: function () {
+                            getHobbies();
+                        }
+                    })
+                }
+            }
+
+        })
+
+        function getHobbies() {
+            /*根据id获取hobby数组*/
+            $.ajax({
+                url: "/earth/user/getHobbies.do",
+                data: {
+                    "userId": userId
+                },
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    $(".hobbies").html("");
+                    //进行赋值
+                    if (data == null) {
+                        $(".col-sm-6").html("你还没有爱好");
+                    } else {
+                        //生成爱好
+                        for (var i = 0; i < data.length; i++) {
+                            var html = " <div>\n" +
+                                "                                            <strong>" + data[i].hobby + "</strong><br/>\n" +
+                                "                                            <span class=\"bulletAll\">\n";
+                            for (var j = data[i].count; j > 0; j--) {
+                                html += "<span class=\"circle full\"></span>\n";
+                            }
+                            for (var j = data[i].count; j < 10; j++) {
+                                html += "<span class=\"circle\"></span>\n";
+                            }
+                            html += " </span>\n" +
+                                "                                        </div><br/>";
+                            $(".hobbies").append(html);
+                        }
+                    }
+                    if (data[0] != null) {
+                        $("#edit-hobbies0").val(data[0].hobby);
+                        $("#edit-hobbies0").attr("name", data[0].id);
+                        $("#edit-count0").val(data[0].count);
+                        if (data[1] != null) {
+                            $("#edit-hobbies1").val(data[1].hobby);
+                            $("#edit-hobbies1").attr("name", data[1].id);
+                            $("#edit-count1").val(data[1].count);
+                            if (data[2] != null) {
+                                $("#edit-hobbies2").val(data[2].hobby);
+                                $("#edit-count2").val(data[2].count);
+                                $("#edit-hobbies2").attr("name", data[2].id);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+</script>
+<script type="text/javascript" src="/js/titleImg/titleImg.js"></script>
+</body>
+</html>

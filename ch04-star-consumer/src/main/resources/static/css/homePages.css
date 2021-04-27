@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    overflow: hidden;
+}
+ul,li{
+    list-style: none;
+}
+.bgDiv{
+    width: 6752px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s cubic-bezier(0,0,.4,1),-webkit-transform 1s cubic-bezier(0,0,.4,1);
+}
+.bgDiv1{
+    background-image: url(/images/qj.png);
+}
+.bgDiv2{
+    background-image: url(/images/zj.png);
+    z-index: -1;
+}
+.bgDiv3{
+    background-image: url(/images/bj.png);
+    z-index: -2;
+}
+.bgDiv1 img{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.bgDiv1 .forest{
+    position:absolute;
+    left: 600px;
+    top: 50%;
+    transform: translateY(-70%);
+    cursor: pointer;
+}
+.bgDiv1 .sea{
+    position:absolute;
+    left: 2550px;
+    top: 50%;
+    transform: translateY(-65%);
+    cursor: pointer;
+}
+.bgDiv1 .Cyberpunk{
+    position:absolute;
+    left: 5300px;
+    top: 50%;
+    transform: translateY(-60%);
+    cursor: pointer;
+}
+.bgDiv1 .galaxy{
+    position:absolute;
+    left: 6450px;
+    top: 50%;
+    transform: translateY(-40%);
+    cursor: pointer;
+}
+/* 页面元素 */
+.content{
+    z-index: 3;
+}
+/* 人物 */
+.figure{
+    width: 420px;
+    height: 318px;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    background-image: url(/images/figure.gif);
+    background-repeat: no-repeat;
+    background-size:cover;
+    z-index: 5;
+    transition: left 0.3s ease-in-out;
+}
+/* 传送门提示气泡 */
+.PortalPrompt{
+    width: 240px;
+    height: 36px;
+    position: absolute;
+    border: solid 1px #000;
+    border-radius: 18px;
+    display: none;
+    text-align: center;
+    line-height: 36px;
+    /* 无法选中文本 */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.PortalPrompt span{
+    display: block;
+    position: absolute;
+    border: solid;
+    border-width:15px;
+    border-color: #000 transparent transparent transparent;
+    bottom: -30px;
+    left: 15px;
+}
+.PortalPrompt .PPC{
+    border-width:14px;
+    left: 16px;
+    bottom:-28px ;
+}
+.PPForest{
+    left: 800px;
+    top: 100px;
+    background-color: rgba(215, 247, 229,1);
+}
+.PPForest .PPC{
+    border-color: #d7f7e5 transparent transparent transparent;
+}
+.PPSea{
+    left: 2750px;
+    top: 100px;
+    background-color: #4ac2e1;
+}
+.PPSea .PPC{
+    border-color: #4ac2e1 transparent transparent transparent;
+}
+.PPCyberpunk{
+    left: 5270px;
+    top: 140px;
+    background-color: #a09fec;
+}
+.PPCyberpunk .PPC{
+    left: 181px;
+    border-color: #a09fec transparent transparent transparent;
+}
+.PPCyberpunk span{
+    left: 180px;
+    border-color: #000 transparent transparent transparent;
+}
+.PPGalaxy{
+    left: 6450px;
+    top: 180px;
+    background-color: #5644ec;
+}
+.PPGalaxy p{
+    color: #fff;
+}
+.PPGalaxy .PPC{
+    left: 181px;
+    border-color: #5644ec transparent transparent transparent;
+}
+.PPGalaxy span{
+    left: 180px;
+    border-color: #000 transparent transparent transparent;
+}
+/* 左下角音乐 */
+@keyframes musicRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.musicIcon{
+    width: 64px;
+    height: 64px;
+    border-radius:50%;
+    overflow: hidden;
+    background: url(/images/musicIcon2.png) center/cover;
+    position:absolute;
+    bottom: 3%;
+    left: 3%;
+    animation: musicRotate 5s linear infinite;
+    cursor: pointer;
+    border:dashed 1px #fff;
+}
+/* 底部按钮 */
+.bottomBtn{
+    width: 800px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.bottomBtn ul li{
+    position: relative;
+    width: 82px;
+    height: 112px;
+    background: url(/images/a1.png) center/cover no-repeat;
+    float: left;
+    margin-right: 150px;
+    cursor: pointer;
+    z-index: 3;
+}
+.bottomBtn ul li:last-of-type{
+    margin-right: 0px;
+}
+.bottomBtn ul li.active,.bottomBtn ul li:hover{
+    background: url(/images/a1-1.png) center/cover no-repeat;
+}
+/* .vortex{
+    width: 120px;
+    height: 108px;
+    left: 131px;
+    top: -10px;
+    position: absolute;
+    background: url(../images/vortex2.gif) center/cover no-repeat;
+    z-index: 2;
+} */

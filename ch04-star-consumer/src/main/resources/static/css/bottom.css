@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('/font/bottom/iconfont.eot');
+    src: url('/font/bottom/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('/font/bottom/iconfont.woff2') format('woff2'),
+        url('/font/bottom/iconfont.woff') format('woff'),
+        url('/font/bottom/iconfont.ttf') format('truetype'),
+        url('/font/bottom/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.PageBottom{
+    width: 100%;
+    height: 256px;
+    background-color:#000 ;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 101;
+}
+.PageBottom > .PBOne{
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+}
+.PageBottom > .PBOne > .PBLogo{
+    width: 259px;
+    height: 70px;
+    background: url(/images/地球logo.png) center/cover no-repeat;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+}
+.PageBottom > .PBOne > .PBContent{
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+    top: 60%;
+}
+.PageBottom > .PBOne > .PBContent > div{
+    float: left;
+    border: 2px solid rgba(255,255,255,0.3);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 180px;
+    height: 48px;
+    margin-right: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 44px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: color .3s linear;
+    -moz-transition: color .3s linear;
+    transition: color .3s linear;
+    cursor: pointer;
+    text-align: center;
+}
+.PageBottom > .PBOne > .PBContent > div > .iconfont{
+    font-size: 32px;
+    vertical-align: -5px;
+    margin-right: 3px;
+}
+.PageBottom > .PBOne > .PBContent > div.QrCode{
+    width: 48px;
+    text-align: center;
+    line-height: 45px;
+
+}
+.PageBottom > .PBOne > .PBContent > div.QrCode > .iconfont{
+    font-size: 18px;
+    vertical-align: 0;
+    margin-right:0;
+}
+.PageBottom > .PBOne > .PBContent > div:last-of-type{
+    margin-right: 0;
+}
+.PageBottom > .PBOne > .PBContent > div:hover{
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #fff;
+}
+.PageBottom > .PBOne > .PBContent > div.QrCode:hover  img{
+    opacity: 1;
+}
+.PageBottom > .PBOne > .PBContent  .QrCode  img{
+    width: 128px;
+    height: 128px;
+    margin-top: -45px;
+    margin-left: 26px;
+    position: absolute;
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+    border: 5px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    opacity: 0;
+}
+.PageBottom > .PBTwo{
+    width: 100%;
+    height: 128px;
+    position: absolute;
+    bottom: -128px;
+    opacity: 0;
+    color: #fff;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: bottom .5s ease-in-out,opacity .5s ease-in-out;
+    -moz-transition: bottom .5s ease-in-out,opacity .5s ease-in-out;
+    transition: bottom .5s ease-in-out,opacity .5s ease-in-out;
+}
+.PageBottom > .PBTwo > div{
+    text-align: center;
+}
+.PageBottom > .PBTwo > div:nth-of-type(1){
+    margin-bottom: 16px;
+}
+.PageBottom > .PBTwo > div:nth-of-type(1) > a{
+    opacity: 0.6;
+    padding: 0px 8px;
+}
+.PageBottom > .PBTwo > div a:hover{
+    opacity: 1;
+    color: #fff;
+}
+.PageBottom > .PBTwo > div:nth-of-type(2){
+    color: rgb(100, 100, 100);
+}
+.PageBottom > .PBTwo > div:nth-of-type(2) > div  a{
+    color: rgb(100, 100, 100);
+}
+.PageBottom > .PBTwo > div:nth-of-type(2)>div:nth-of-type(1){
+    margin-bottom: 16px;
+}

@@ -1,0 +1,22 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+body{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items:center;
+}
+canvas{
+	display: block;
+}
+#ss1{
+	position: absolute;
+	color:#ffffff;
+	font-family: "微软雅黑";
+	z-index:11;
+	top:84%;
+}

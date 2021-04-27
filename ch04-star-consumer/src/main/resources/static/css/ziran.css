@@ -1,0 +1,321 @@
+html{
+	background-color:#f7f7f7;
+}
+body{
+	overflow-x:hidden;
+	position: relative;
+}
+*{
+	margin: 0 auto;
+}
+
+#s1{
+	width:100%;
+	height:4%;
+	position:relative;
+	background: url("/images/ziran/zirandbj1.png");
+	background-size: 125%;
+}
+#s1 div{
+	width:100%;
+	height: 210px;
+	position:relative;
+	overflow: hidden;
+	background-size: auto;
+	background: url("/images/ziran/zirandbj2.png") repeat-x;
+}
+
+#tit{
+	width:1920px;
+	height:195px;
+	background-color: #ffffff;
+}
+
+/*第二块标题内容*/
+#tit-nei li{
+	float:left;
+	margin:0px 27px;
+	list-style: none;
+	width:400px;
+	height:170px;
+	text-align:center;
+	margin-top:12px;
+	position: relative;
+	cursor:pointer;
+}
+#tit-nei li:hover{
+	height:370px;
+	margin-top:-200px;
+	background-color: #ffffff;
+	box-shadow:0px 0px 10px #999999;
+	cursor:pointer;
+	transition:margin-top 0.7s ease;
+}
+#tit-nei li:hover > #tit-nei-qian{
+	display:block;
+}
+/*第一板块*/
+#tit-nei-fen{
+	height:10px;
+}
+#tit-nei-tit{
+	font-size:25px;
+	color:#333333;
+}
+#tit-nei-nei{
+	font-size:16px;
+	color:#666666;
+}
+#tit-nei-qian{
+	display:none;
+}
+
+#s2{
+	width:1920px;
+	height:820px;
+}
+#s3{
+	width:1920px;
+	height:940px;
+	background-color: #000000;
+	position:relative;
+}
+#left1{
+	width:600px;
+	height:940px;
+	background-color: #ffffff;
+	position: absolute;
+	}
+#big1{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:29%;
+	top:40%;
+	cursor:pointer;
+}
+#big2{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:2%;
+	top:40%;
+	cursor:pointer;
+	display:none;
+}
+#right1{
+	float:right;
+	width:1310px;
+	height:940px;
+	background:url(../images/ziran/000020feukjrroiin9n9nr.jpg) center/cover no-repeat;
+}
+#ban1{
+	background:url(../images/ziran/ban.png) center/cover no-repeat;
+	width:500px;
+	height:700px;
+	position: absolute;
+	left:7%;
+	top:10%;
+	cursor:pointer;
+}
+#nnn1{
+	width:400px;
+	position: absolute;
+	left:12%;
+	top:10%;
+	cursor:pointer;
+}
+#nnn1 p:nth-child(1){
+	font-size:30px;
+	font-family:"庞门正道标题体";
+}
+#nnn1 p:nth-child(5){
+	font-size:12px;
+	color:#999999;
+}
+#im1{
+	background:url(../images/ziran/xiaotu1.jpg) center/cover no-repeat;
+	width:354px;
+	height:170px;
+	position: absolute;
+	left:1.5%;
+	top:120%;
+	cursor:pointer;
+	transition:1s;
+}
+#im1:hover{
+    transform:scale(1.1);
+    transition:1s;
+}
+#t1{
+	width:400px;
+	height:170px;
+	color:#ffffff;
+	font-family:"庞门正道标题体";
+	font-size:28px;
+	position:relative;
+	top:40%;
+	cursor:pointer;
+	z-index:10;
+}
+#videos1{
+	position:relative;
+	top:-20.7%;
+	cursor:pointer;
+
+}
+
+
+#s4{
+	width:1920px;
+	height:940px;
+	background:url(../images/ziran/bjbj.jpg) center/cover no-repeat;
+	position:relative;
+}
+
+#s4-bt1{
+	width:400px;
+	height:170px;
+	position: absolute;
+	left:5%;
+	top:8%;
+	cursor:pointer;
+}
+
+#s4-bt1 p:nth-child(1){
+	font-size:40px;
+	font-family:"庞门正道标题体";
+	color:#ffffff;
+}
+#s4-bt1 p:nth-child(2){
+	font-size:22px;
+	color:#999999;
+}
+
+
+#s4-n1{
+	width:1787px;
+	height:700px;
+	position: absolute;
+	left:3%;
+	top:19%;
+	cursor:pointer;
+}
+
+#s4-n1 div{
+	transition:1s;
+}
+#s4-n1 div:hover{
+	box-shadow:0px 0px 10px #ffffff;
+    transform:scale(1.04);
+    transition:1s;
+}
+
+#s4-n1 div img{
+	transition:1s;
+}
+#s4-n1 div img:hover{
+    transform:scale(1.3);
+    transition:1s;
+}
+
+#s4-n1-nn1{
+	width:500px;
+	height:673px;
+	background-color:black;
+	position: absolute;
+	overflow:hidden;
+	left:1%;
+	top:2%;
+	cursor:pointer;
+	border-radius:20px;
+}
+
+#s4-n1-nn2{
+	width:300px;
+	height:673px;
+	background-color:black;
+	position: absolute;
+	overflow:hidden;
+	left:30%;
+	top:2%;
+	cursor:pointer;
+	border-radius:20px;
+}
+#s4-n1-nn3{
+	width:600px;
+	height:330px;
+	background-color:black;
+	position: absolute;
+	overflow:hidden;
+	left:47.7%;
+	top:2%;
+	cursor:pointer;
+	border-radius:20px;
+}
+#s4-n1-nn4{
+	width:600px;
+	height:330px;
+	background-color:black;
+	position: absolute;
+	overflow:hidden;
+	left:47.7%;
+	top:50.9%;
+	cursor:pointer;
+	border-radius:20px;
+}
+#s4-n1-nn5{
+	width:300px;
+	height:673px;
+	background-color:black;
+	position: absolute;
+	overflow:hidden;
+	left:82.3%;
+	top:2%;
+	cursor:pointer;
+	border-radius:20px;
+}
+
+
+.g-img1 {
+    background:url(../images/ziran/s-gg1.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img2 {
+    background:url(../images/ziran/s-gg2.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img3 {
+    background:url(../images/ziran/s-gg3.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img4 {
+    background:url(../images/ziran/s-gg4.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-word{
+	 height: 600px;
+	 width:1920px;
+}
+#di{
+	width:100%;
+	height:300px;
+	background-color:#000000;
+}
+#di-1{
+	width:1920px;
+	height:300px;
+	background-color:#000000;
+}

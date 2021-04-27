@@ -1,0 +1,228 @@
+html{
+	background-color:#000000;
+}
+body{
+	overflow-x:hidden;
+	position: relative;
+
+}
+*{
+	margin: 0 auto;
+}
+
+
+#tit{
+	width:1920px;
+	height:185px;
+	z-index:11;
+	position: relative;
+	background-color: #0f0117;
+	box-shadow:0px 0px 10px #3c207a;
+	color: #49a4f1;
+}
+
+/*第二块标题内容*/
+#tit-nei li{
+	float:left;
+	margin:0px 27px;
+	list-style: none;
+	width:400px;
+	height:170px;
+	text-align:center;
+	margin-top:12px;
+	
+	cursor:pointer;
+}
+#tit-nei img:hover{
+	transform:scale(1.5);
+    transition:1s;
+    box-shadow:0px 0px 10px #3c207a;
+}
+#s2{
+	width:1920px;
+	height:900px;
+	background-color:#ffffff;
+}
+#s2 iframe{
+	width:1920px;
+	height:900px;
+}
+
+#s3{
+	width:1920px;
+	height:940px;
+	background-color: #000000;
+	position:relative;
+}
+#left1{
+	width:600px;
+	height:940px;
+	background-color: #000310;
+	position: absolute;
+	box-shadow:0px 0px 10px #3c207a;
+	}
+#big1{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:29%;
+	top:40%;
+	cursor:pointer;
+}
+#big2{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:2%;
+	top:40%;
+	cursor:pointer;
+	display:none;
+}
+#right1{
+	float:right;
+	width:1310px;
+	height:940px;
+	background:url(/images/keji/17719cbc-9669-11ea-baff-0242c0a82002.jpg) center/cover no-repeat;
+}
+#ban1{
+	width:500px;
+	height:700px;
+	position: absolute;
+	left:7%;
+	top:10%;
+	cursor:pointer;
+	background-color: #000518;
+	box-shadow:0px 0px 10px #145acd;
+}
+#nnn1{
+	width:400px;
+	position: absolute;
+	left:12%;
+	top:10%;
+	cursor:pointer;
+	color: #368bf5;
+}
+#nnn1 p:nth-child(1){
+	color: #49a4f1;
+	font-size:30px;
+	font-family:"庞门正道标题体";
+}
+#nnn1 p:nth-child(5){
+	font-size:12px;
+	color:#113c71;
+}
+#im1{
+	background:url(/images/keji/7fd1d4ae-9373-11eb-87dd-0242c0a84002.jpg) center/cover no-repeat;
+	width:354px;
+	height:170px;
+	position: absolute;
+	left:1.5%;
+	top:120%;
+	cursor:pointer;
+	transition:1s;
+}
+#im1:hover{
+    transform:scale(1.1);
+    transition:1s;
+}
+#t1{
+	width:400px;
+	height:170px;
+	color:#ffffff;
+	font-family:"庞门正道标题体";
+	font-size:28px;
+	position:relative;
+	top:40%;
+	cursor:pointer;
+	z-index:10;
+}
+#videos1{
+	position:relative;
+	top:-29%;
+	cursor:pointer;
+}
+
+
+#s4{
+	width:1920px;
+	height:940px;
+	background:url(/images/keji/tansuobj.jpg) center/cover no-repeat;
+	position:relative;
+}
+
+#s4-bt1{
+	width:400px;
+	height:170px;
+	position: absolute;
+	left:5%;
+	top:8%;
+	cursor:pointer;
+}
+
+#s4-bt1 p:nth-child(1){
+	font-size:40px;
+	font-family:"庞门正道标题体";
+	color: #49a4f1;
+}
+#s4-bt1 p:nth-child(2){
+	font-size:22px;
+	color:#113c71;
+}
+
+
+#s4-n1{
+	width:1787px;
+	height:700px;
+	position: absolute;
+	left:3%;
+	top:19%;
+	cursor:pointer;
+}
+#s4-n1 iframe{
+	width:1787px;
+	height:700px;
+}
+
+
+.g-img1 {
+    background:url(/images/keji/ggg1.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img2 {
+    background:url(/images/keji/ggg2.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img3 {
+    background:url(/images/keji/ggg3.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-img4 {
+    background:url(/images/keji/ggg4.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height:940px
+}
+.g-word{
+	 height: 600px;
+	 width:1920px;
+}
+#di{
+	width:100%;
+	height:300px;
+	background-color:#000000;
+}
+#di-1{
+	width:1920px;
+	height:300px;
+	background-color:#000000;
+}

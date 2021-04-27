@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.star.mapper.HobbyMapper">
+  <resultMap id="BaseResultMap" type="com.dream.star.model.Hobby">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="hobby" jdbcType="VARCHAR" property="hobby" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="useId" jdbcType="VARCHAR" property="useid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, hobby, count, useId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_hobby
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_hobby
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dream.star.model.Hobby">
+    insert into t_hobby (id, hobby, count, 
+      useId)
+    values (#{id,jdbcType=INTEGER}, #{hobby,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, 
+      #{useid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dream.star.model.Hobby">
+    insert into t_hobby
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="hobby != null">
+        hobby,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="useid != null">
+        useId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hobby != null">
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="useid != null">
+        #{useid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dream.star.model.Hobby">
+    update t_hobby
+    <set>
+      <if test="hobby != null">
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="useid != null">
+        useId = #{useid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dream.star.model.Hobby">
+    update t_hobby
+    set hobby = #{hobby,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER},
+      useId = #{useid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectAllHobbies" resultType="com.dream.star.model.Hobby">
+    select  * from t_hobby where useId = #{userId}
+  </select>
+  <update id="setHobbies">
+    update t_hobby set
+        hobby = #{hobby},
+        count =#{count }
+        where id =#{id}
+  </update>
+</mapper>

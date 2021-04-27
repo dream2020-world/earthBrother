@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.star.mapper.UserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.dream.star.model.UserInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="userId" jdbcType="CHAR" property="userid"/>
+        <result column="intro" jdbcType="VARCHAR" property="intro"/>
+        <result column="job" jdbcType="VARCHAR" property="job"/>
+        <result column="headImage" jdbcType="VARCHAR" property="headimage"/>
+        <result column="borndate" jdbcType="VARCHAR" property="borndate"/>
+        <result column="hobbyId" jdbcType="INTEGER" property="hobbyid"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, userId, intro, job, headImage, borndate, hobbyId, address
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_userInfo
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_userInfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.dream.star.model.UserInfo">
+    insert into t_userInfo (id, userId, intro, 
+      job, headImage, borndate, 
+      hobbyId, address)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=CHAR}, #{intro,jdbcType=VARCHAR}, 
+      #{job,jdbcType=VARCHAR}, #{headimage,jdbcType=VARCHAR}, #{borndate,jdbcType=VARCHAR}, 
+      #{hobbyid,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.dream.star.model.UserInfo">
+        insert into t_userInfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userid != null">
+                userId,
+            </if>
+            <if test="intro != null">
+                intro,
+            </if>
+            <if test="job != null">
+                job,
+            </if>
+            <if test="headimage != null">
+                headImage,
+            </if>
+            <if test="borndate != null">
+                borndate,
+            </if>
+            <if test="hobbyid != null">
+                hobbyId,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userid != null">
+                #{userid,jdbcType=CHAR},
+            </if>
+            <if test="intro != null">
+                #{intro,jdbcType=VARCHAR},
+            </if>
+            <if test="job != null">
+                #{job,jdbcType=VARCHAR},
+            </if>
+            <if test="headimage != null">
+                #{headimage,jdbcType=VARCHAR},
+            </if>
+            <if test="borndate != null">
+                #{borndate,jdbcType=VARCHAR},
+            </if>
+            <if test="hobbyid != null">
+                #{hobbyid,jdbcType=INTEGER},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.dream.star.model.UserInfo">
+        update t_userInfo
+        <set>
+            <if test="userid != null">
+                userId = #{userid,jdbcType=CHAR},
+            </if>
+            <if test="intro != null">
+                intro = #{intro,jdbcType=VARCHAR},
+            </if>
+            <if test="job != null">
+                job = #{job,jdbcType=VARCHAR},
+            </if>
+            <if test="headimage != null">
+                headImage = #{headimage,jdbcType=VARCHAR},
+            </if>
+            <if test="borndate != null">
+                borndate = #{borndate,jdbcType=VARCHAR},
+            </if>
+            <if test="hobbyid != null">
+                hobbyId = #{hobbyid,jdbcType=INTEGER},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.dream.star.model.UserInfo">
+    update t_userInfo
+    set userId = #{userid,jdbcType=CHAR},
+      intro = #{intro,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      headImage = #{headimage,jdbcType=VARCHAR},
+      borndate = #{borndate,jdbcType=VARCHAR},
+      hobbyId = #{hobbyid,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="selectByPrimaryKeys" resultType="com.dream.star.model.UserInfo">
+    select  * from t_userInfo where userId = #{userId}
+  </select>
+    <update id="setUserInfo">
+    update t_userInfo
+    set intro = #{intro},
+      job = #{job,jdbcType=VARCHAR},
+      borndate = #{borndate,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <update id="setTitleImg">
+          update t_userInfo set headImage =#{imgTitle}
+         where id = #{userId}
+    </update>
+    <insert id="insertUserId">
+          insert into t_userInfo (userId) value (#{id})
+    </insert>
+</mapper>

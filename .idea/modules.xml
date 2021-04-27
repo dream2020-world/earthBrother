@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch00-center-config/ch00-center-config.iml" filepath="$PROJECT_DIR$/ch00-center-config/ch00-center-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch01-parent/ch01-parent.iml" filepath="$PROJECT_DIR$/ch01-parent/ch01-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch02-star-interface/ch02-star-interface.iml" filepath="$PROJECT_DIR$/ch02-star-interface/ch02-star-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch03-star-provider/ch03-star-provider.iml" filepath="$PROJECT_DIR$/ch03-star-provider/ch03-star-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch04-star-consumer/ch04-star-consumer.iml" filepath="$PROJECT_DIR$/ch04-star-consumer/ch04-star-consumer.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/css/checkcode/verify.css">
+    <link rel="stylesheet" href="/css/hint/sweet-alert.css">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        #mpanel4 {
+            position: relative;
+            left: 15px;
+            bottom: 160px;
+        }
+
+        .pages {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 102, 154, 0.3);
+        }
+
+        .loginmain {
+            background: rgba(255, 16, 16, 0.2);
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgba(67, 222, 181, 0.8);
+        }
+
+        .reg {
+            float: right;
+            color: rgba(17, 19, 181, 0.9);
+        }
+        .reg a{
+            color: purple;
+        }
+
+        .error {
+            float: left;
+            margin-left: 35px;
+            color: rgba(225, 219,   24, 0.9);
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        .rotate {
+            animation: transform 3s infinite;
+        }
+
+        @keyframes transform {
+            from {
+                -webkit-transform: perspective(1000px) rotateY(180deg);
+                transform: perspective(1000px) rotateY(180deg);
+            }
+            to {
+                -webkit-transform: perspective(1000px) rotateY(0deg);
+                transform: perspective(1000px) rotateY(0deg);
+            }
+        }
+
+
+        .login-con span {
+            font-size: 10px;
+            color: rgba(225, 219, 24, 0.9);
+        }
+        .select{
+            background: none;
+            position: relative;
+            right: 30px;bottom: 3px;
+            color: rgba(4, 242, 0, 0.8);
+            border: none;
+        }
+        .select option{
+            background: rgba(242, 21, 222, 0.1);
+        }
+        .register_forget{
+            position: relative;
+            margin-top: 10px;
+            left: 300px;
+        }
+        .register_forget a {
+            color: purple;
+        }
+        .register_forget a:hover{
+            color: red;
+        }
+        .sends{
+            height: 25px;
+            width: 35px;
+            background: rgba(225, 187, 142, 0.9);
+            text-align: center;
+            line-height: 25px;
+            font-size: 10px;
+            border-radius: 10px;
+            position: absolute;
+            left: 280px; bottom: 10px;
+            color: deepskyblue;
+            display: none;
+
+        }
+        .sends:hover{
+            cursor: pointer;
+        }
+
+        .three #forgetPwd{
+            position: absolute;
+            top: 30px;
+        }
+        .three .login-title{
+            height: 40px;
+        }
+        .dog{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 999999;
+        }
+    </style>
+</head>
+
+<body background="/images/login/bg1.jpg">
+<div class="dog">
+    <iframe src="/html/dog.html" width="100%" height="100%" scrolling="auto"  frameborder="0">
+    </iframe>
+</div>
+<canvas class="cavs" width="1575" height="1337"></canvas>
+<div class="pages"></div>
+
+<div class="loginmain">
+</div>
+
+</body>
+<!--js-->
+<script type="text/javascript" src="/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/js/login/ban.js"></script>
+<script type="text/javascript" src="/js/checkcode/verify.js"></script>
+<script type="text/javascript" src="/js/login/login.js"></script>
+<script type="text/javascript" src="/js/hint/sweet-alert.js"></script>
+<script>
+    window.onload = function() {
+        $(".dog").fadeOut(500);
+    }
+</script>
+</html>
+

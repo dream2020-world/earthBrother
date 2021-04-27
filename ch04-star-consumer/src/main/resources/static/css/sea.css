@@ -1,0 +1,534 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ul,li{
+    list-style: none;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('/font/sea/iconfont.eot');
+    src: url('/font/sea/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('/font/sea/iconfont.woff2') format('woff2'),
+    url('/font/sea/iconfont.woff') format('woff'),
+    url('/font/sea/iconfont.ttf') format('truetype'),
+    url('/font/sea/iconfont.svg#iconfont') format('svg');
+}
+/*去除滚动条*/
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#content{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+#videoID{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+}
+.firstContent{
+    width: 600px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    transition: all 0.5s linear;
+}
+.firstContent h3{
+    text-align: center;
+    margin: 10px 0px;
+}
+.firstContent p{
+    text-indent: 2em;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+.bgDiv{
+    width: 100%;
+    position:absolute;
+    top: 100%;
+    height: 3748px;
+    background:url(/images/haiyang/bg.jpg) center/cover no-repeat;
+}
+.bgDiv > ul{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.bgDiv > ul > li{
+    width: 1600px;
+    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bgDiv > ul > li:last-of-type{
+    width: 100%;
+}
+.bgDiv > ul .ecological .e-top{
+    width: 1600px;
+    height: 128px;
+    margin-bottom: 16px;
+    margin-top: 50px;
+}
+.bgDiv > ul .ecological .e-top h1{
+    font-size: 2.64vw;
+    color: #cad7e9;
+}
+.bgDiv > ul .ecological .e-top h2{
+    font-size: 1.67vw;
+    color: #d9cdd0;
+}
+.bgDiv > ul .ecological .e-content{
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 66vh;
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+    min-width: 960px;
+}
+.bgDiv > ul .e-content > div{
+    opacity: 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity .2s linear, width .2s ease;
+    -moz-transition: opacity .2s linear, width .2s ease;
+    transition: opacity .2s linear, width .2s ease;
+    border-radius: 20px;
+    border:solid 1px #000;
+    overflow: hidden;
+}
+.bgDiv > ul .e-content > div > video{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+.bgDiv > ul .e-content > div:nth-of-type(1){
+    width: 39%;
+}
+.bgDiv > ul .e-content > div:nth-of-type(2){
+    width: 24%;
+    margin-left: 16px;
+}
+.bgDiv > ul .e-content > div:nth-of-type(3){
+    width: 36%;
+    margin-left: 16px;
+    overflow: hidden;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 0px;
+}
+.bgDiv > ul .e-content > div:nth-of-type(1):hover{
+    width: 49%;
+}
+.bgDiv > ul .e-content > div:nth-of-type(2):hover{
+    width: 34%;
+}
+.bgDiv > ul .e-content div:nth-of-type(3) > div{
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 32vh;
+    border-radius: 20px;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: opacity .1s linear,height .2s ease;
+    -moz-transition: opacity .1s linear,height .2s ease;
+    transition: opacity .1s linear,height .2s ease;
+}
+.bgDiv > ul .e-content div:nth-of-type(3) > div:hover{
+    height: 52vh;
+}
+.bgDiv > ul .e-content div:nth-of-type(3) > div:nth-of-type(1){
+    margin-bottom: 16px;
+}
+.bgDiv2{
+    width: 100%;
+    height: 7183px;
+    position:absolute;
+    top: 100%;
+    background:url(/images/haiyang/yu.png) center/cover no-repeat;
+    z-index: 3;
+}
+.videoPage .VPTop{
+    position: absolute;
+    padding: 16px;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%) scale(0,0);
+    color: rgb(240, 232, 232);
+    font-size: 32px;
+    font-weight: bold;
+    transition: all 0.5s ease-in;
+}
+.videoPage .VBContent {
+    width: 1320px;
+    height: 53%;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-40%);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.videoPage .VBContent ul{
+    width: 200%;
+    height: 48.5%;
+    position: absolute;
+    left: 0;
+}
+.videoPage .VBContent ul:nth-of-type(2){
+    bottom: 0;
+    left: -660px;
+}
+.videoPage .VBContent > ul > li{
+    width: 312px;
+    height: 100%;
+    float: left;
+    margin: 0 8px;
+    cursor: pointer;
+    position: relative;
+}
+.videoPage .VBContent > ul > li:hover > .VBCMask{
+    opacity: 0;
+}
+.videoPage .VBContent > ul > li > video{
+    object-fit:fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.videoPage .VBContent > ul > li > .VBCMask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    transition: all .3s ease;
+}
+.videoPage .VBContent > ul > li > .VBCMask > span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: url(/images/播放.png) center/cover;
+}
+.videoPage .VBContent .VBCOne{
+    margin-bottom: 16px;
+}
+/* 第三页 */
+.biological > .b-model{
+    width: 430px;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.biological > .b-model > div:nth-of-type(1){
+    width: 100%;
+    height: 128px;
+    border: solid 1px #000;
+    position: absolute;
+    left: 50px;
+    top: 15%;
+}
+.biological > .b-model > div:nth-of-type(1) > h1{
+    font-size:42px ;
+    color: #fff;
+}
+.biological > .b-model > div:nth-of-type(1) > h2{
+    font-size: 28px;
+    color: #fafafb;
+}
+.biological > .b-image{
+    min-width: 1005px;
+    height: 100%;
+    min-height: 800;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    -webkit-overflow-y: hidden;
+    -moz-overflow-y: hidden;
+    overflow-y: hidden;
+    padding: 0 10px;
+}
+.biological > .b-image > ul{
+    width: 345px;
+    height: 2200px;
+    margin-right:15px ;
+    float: left;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    transition: all linear .3s;
+    position: relative;
+}
+.biological > .b-image > ul:nth-of-type(1){
+    padding-top: 20vw;
+    transform: translate(0,0);
+}
+.biological > .b-image > ul:nth-of-type(2){
+    padding-top: 60px;
+    transform: translate(0,0);
+}
+.biological > .b-image > ul:last-of-type{
+    margin-right: 0;
+    padding-top: 12vw;
+    transform: translate(0,0);
+}
+.biological > .b-image > ul > li{
+    width: 100%;
+    height: 585px;
+    margin-bottom: 16px;
+    border-radius: 30px;
+    background-size: cover;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    -webkit-transition: opacity 1.5s linear;
+    -moz-transition: opacity 1.5s linear;
+    transition: opacity 1.5s linear,box-shadow .4s linear;
+    box-sizing: border-box;
+}
+.biological > .b-image > ul > li:hover{
+    box-shadow: 0 0 3px 3px #b2f8f6;
+}
+.biological > .b-image > ul > li:last-of-type{
+    margin-bottom: 0;
+}
+.biological > .b-image > ul:nth-of-type(1) > li:nth-of-type(1){
+    background-image: url(/images/haiyang/image1.jpg);
+}
+.biological > .b-image > ul:nth-of-type(1) > li:nth-of-type(2){
+    background-image: url(/images/haiyang/image2.jpg);
+}
+.biological > .b-image > ul:nth-of-type(1) > li:nth-of-type(3){
+    background-image: url(/images/haiyang/image3.jpg);
+}
+.biological > .b-image > ul:nth-of-type(1) > li:nth-of-type(4){
+    background-image: url(/images/haiyang/image4.jpg);
+}
+.biological > .b-image > ul:nth-of-type(2) > li:nth-of-type(1){
+    background-image: url(/images/haiyang/image5.jpg);
+}
+.biological > .b-image > ul:nth-of-type(2) > li:nth-of-type(2){
+    background-image: url(/images/haiyang/image6.jpg);
+}
+.biological > .b-image > ul:nth-of-type(2) > li:nth-of-type(3){
+    background-image: url(/images/haiyang/image7.jpg);
+}
+.biological > .b-image > ul:nth-of-type(2) > li:nth-of-type(4){
+    background-image: url(/images/haiyang/image8.jpg);
+}
+.biological > .b-image > ul:nth-of-type(3) > li:nth-of-type(1){
+    background-image: url(/images/haiyang/image9.jpg);
+}
+.biological > .b-image > ul:nth-of-type(3) > li:nth-of-type(2){
+    background-image: url(/images/haiyang/image10.jpg);
+}
+.biological > .b-image > ul:nth-of-type(3) > li:nth-of-type(3){
+    background-image: url(/images/haiyang/image11.jpg);
+}
+.biological > .b-image > ul:nth-of-type(3) > li:nth-of-type(4){
+    background-image: url(/images/haiyang/image12.jpg);
+}
+/* 第四页 */
+.fourPage-Content{
+    width: 1540px;
+    height: 480px;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: opacity 1s ease,width 1s ease-in-out;
+    -moz-transition: opacity 1s ease,width 1s ease-in-out;
+    transition: opacity 1s ease,width 1s ease-in-out;
+}
+.fourPage-Content > div{
+    width: 500px;
+    height: 100%;
+    float: left;
+    margin-right:20px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 25px 25px 0 0;
+    overflow: hidden;
+}
+.fourPage-Content > div > div:nth-of-type(1){
+    width: 100%;
+    height: 300px;
+    border-radius: 26px;
+    position: relative;
+    overflow: hidden;
+}
+.fourPage-Content > div > div:nth-of-type(1) > div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: cover;
+    transition: all 0.5s ease;
+
+}
+.fourPage-Content > div > div:nth-of-type(1) > div:hover {
+    width: 120%;
+    height: 120%;
+}
+.fourPage-Content > div > div:nth-of-type(1) > span{
+    display: block;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(221, 212, 212);
+}
+.fourPage-Content > div > div:nth-of-type(1) > span:hover{
+    color: rgb(161, 157, 157);
+}
+.fourPage-Content > div > div:nth-of-type(2){
+    width: 100%;
+    height: 200px;
+}
+.fourPage-Content > div > div:nth-of-type(2) > h3{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+.fourPage-Content > div > div:nth-of-type(2) > p{
+    color: #b2b4b8;
+    height: 108px;
+    overflow: hidden;
+    /* 设置盒子样式，-webkit-是兼容前缀 */
+    display: -webkit-box;
+    /* 设置盒子参考方式 */
+    -webkit-box-orient: vertical;
+    /* 设置超出多少行显示省略号 */
+    -webkit-line-clamp: 5;
+}
+.fourPage-Content > div > div:nth-of-type(2) > a{
+    display: block;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 14px;
+}
+.fourPage-Content > div:last-of-type{
+    margin-right: 0;
+}
+
+.fourPage-Content > div .right-arrow{
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+/* 图片 */
+.fourPage-Content > .FCOne > div:nth-of-type(1) > div{
+    background-image: url(/images/haiyang/水龙卷.jpg);
+}
+.fourPage-Content > .FCTwo > div:nth-of-type(1) > div{
+    background-image: url(/images/haiyang/漩涡1.jpg);
+}
+.fourPage-Content > .FCThree > div:nth-of-type(1) > div{
+    background-image: url(/images/haiyang/海啸1.jpg);
+}
+/* 回到顶部 */
+#go-top{
+    opacity: .8;
+    position: fixed;
+    z-index: 100;
+    right: 12px;
+    bottom: 12px;
+    width: 48px;
+    border-radius: 24px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 12px rgb(0 0 0 / 12%);
+    box-shadow: 0 0 12px rgb(0 0 0 / 12%);
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    font-size: 24px;
+    text-align: center;
+    display: none;
+    transition: all 0.5s ease-in;
+}
+/* 遮罩层 */
+.mask{
+    position: absolute;
+    top: 0;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 1;
+    -webkit-transition: opacity .4s linear;
+    -moz-transition: opacity .4s linear;
+    transition: opacity .4s linear;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-1.79%, rgba(255,255,255,0)), color-stop(14.76%, rgba(255,255,255,0.5)), color-stop(70%, #fff));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) -1.79%, rgba(255,255,255,0.5) 14.76%, #fff 70%);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) -1.79%, rgba(255,255,255,0.5) 14.76%, #fff 70%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) -1.79%, rgba(255,255,255,0.5) 14.76%, #fff 70%);
+}

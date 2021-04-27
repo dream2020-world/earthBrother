@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.star.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.dream.star.model.User">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="loginAct" jdbcType="VARCHAR" property="loginact" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="loginPwd" jdbcType="VARCHAR" property="loginpwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="lockState" jdbcType="VARCHAR" property="lockstate" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, loginAct, name, loginPwd, email, createTime, lockState, phone
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_user
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dream.star.model.User">
+    insert into t_user (id, loginAct, name, 
+      loginPwd, email, createTime, 
+      lockState, phone)
+    values (#{id,jdbcType=CHAR}, #{loginact,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{loginpwd,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=VARCHAR}, 
+      #{lockstate,jdbcType=VARCHAR}, #{phone,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dream.star.model.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loginact != null">
+        loginAct,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="loginpwd != null">
+        loginPwd,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="lockstate != null">
+        lockState,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="loginact != null">
+        #{loginact,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="loginpwd != null">
+        #{loginpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lockstate != null">
+        #{lockstate,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dream.star.model.User">
+    update t_user
+    <set>
+      <if test="loginact != null">
+        loginAct = #{loginact,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="loginpwd != null">
+        loginPwd = #{loginpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lockstate != null">
+        lockState = #{lockstate,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dream.star.model.User">
+    update t_user
+    set loginAct = #{loginact,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      loginPwd = #{loginpwd,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      lockState = #{lockstate,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <!--登录验证-->
+  <select id="login" resultType="com.dream.star.model.User">
+        select * from t_user
+        where  loginAct=#{loginAct} and loginPwd=#{loginPwd}
+  </select>
+  <!--根据用户名和邮箱或密码获取用户-->
+  <select id="forgetPwd" resultType="com.dream.star.model.User">
+    select *from t_user
+    <where>
+      <if test="loginact!=null and loginact!=''" >
+         and loginAct =#{loginact}
+      </if>
+      <if test="email!=null and email!=''">
+        and email =#{email}
+      </if>
+      <if test="phone!=null and phone!=''">
+        and phone =#{phone}
+      </if>
+    </where>
+  </select>
+  <update id="setUser">
+       update t_user set name =#{name},
+        email = #{email},
+         phone = #{phone}
+         where id  = #{id}
+  </update>
+  <select id="selectByPrimaryKeys" resultType="com.dream.star.model.User">
+    select * from t_user where id = #{id};
+  </select>
+</mapper>

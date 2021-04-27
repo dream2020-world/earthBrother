@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>飞机大战</title>
+		<link rel="stylesheet" href="/css/feiji/reset.css" />
+	</head>
+	<body>
+		<!--
+        	作者：乍见之
+        	时间：2021-4-12
+        	游戏名：飞机大战
+        	描述：js用的es5语法，兼容大部分浏览器
+        	玩法：	1、支持上下左右键控制飞机移动，空格键暂停/继续
+        			2、支持飞机跟随鼠标移动
+        			3、支持移动端
+        -->
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript" src="/js/feiji/Tools.js" ></script>
+		<script type="text/javascript" src="/js/feiji/Frame.js" ></script>
+		<script type="text/javascript" src="/js/feiji/BackGround.js" ></script>
+		<script type="text/javascript" src="/js/feiji/Bomb.js" ></script>
+		<script type="text/javascript" src="/js/feiji/MyPlane.js" ></script>
+		<script type="text/javascript" src="/js/feiji/Bullet.js" ></script>
+		<script type="text/javascript" src="/js/feiji/EnemyPlane.js" ></script>
+		<script type="text/javascript" src="/js/feiji/GameStart.js" ></script>
+		<script>
+			window.onload = function(){
+				//禁用移动端浏览器页面的上下拖拽
+				document.body.addEventListener('touchmove',function(e){e.preventDefault()},false);
+				//开始游戏
+				new GameStart();
+			}
+		</script>
+
+		<div id="ss1">
+			<img src="/images/feiji/dibukuang.png" alt="">
+		</div>
+	</body>
+</html>

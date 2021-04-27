@@ -1,0 +1,49 @@
+.btn {
+  float: left;
+  margin-right: 40px;
+  position: relative;
+}
+.btn .btn__icon {
+  height: 40px;
+}
+.btn .btn__shadow {
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: -15px;
+  height: 70px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: -15px;
+  width: 70px;
+}
+.btn .btn__icon .icon__shape {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+.btn .btn__icon .icon__shape--translucide {
+  opacity: 0.2;
+}
+.btn .btn__icon .icon__shape--orange {
+  stroke: #ffa700;
+}
+.btn--play-pause{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn--play-pause .btn__icon .icon__shape--circle {
+  height: 40px;
+  stroke-dasharray: 119.38052 119.38052;
+  width: 40px;
+}
+.btn--play-pause .btn__icon .icon__shape--line {
+  stroke-dasharray: 12 12;
+}
+.btn--play-pause .btn__icon .icon__shape--triangle {
+  stroke-dasharray: 12 38;
+}
